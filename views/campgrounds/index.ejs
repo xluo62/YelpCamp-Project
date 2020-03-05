@@ -1,0 +1,44 @@
+
+<%- include("../partials/header") %>
+
+<div class="container">
+    <header class="jumbotron">
+        <!-- 用两个container的方法将jumbotron里的文字排版 -->
+        <div class="container">
+            <h1>This is the Campgrounds Page</h1>
+            <p>View our hand-picked campgrounds from all over the world</p>
+            <a class="btn btn-lg btn-primary" href="campgrounds/new">Add New Campground</a>
+        </div>
+        
+    </header>
+
+    <div class="row">
+        <% campgrounds.forEach(function(campground){ %>
+            <div class="col-md-3 col-sm-6 ">
+                <div class="card text-center my-2">
+                    
+                    <img id="indexImg" class="card-img-top" src="<%= campground.image %>" alt="">
+
+                    <div class="card-body pb-1">
+                        <h4 class="card-title "> <%= campground.name %> </h4>
+                        <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary mb-10">More Info</a> 
+                    </div>
+                    
+                </div>
+                <!--  -->
+                
+            </div>
+            
+            
+        <% }) %>
+    </div>
+
+
+
+
+ 
+
+
+
+</div>
+<%- include("../partials/footer") %>
