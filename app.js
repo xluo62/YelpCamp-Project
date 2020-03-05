@@ -59,7 +59,10 @@ app.use(campgroundsRoutes);
 
  
 
-app.listen("0.0.0.0", function(){
-    console.log("Server Is ON!");
+// app.listen("3000", function(){
+//     console.log("Server Is ON!");
+// });
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });
-
